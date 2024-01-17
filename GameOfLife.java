@@ -11,10 +11,10 @@ public class GameOfLife {
 		String fileName = args[0];
 		//// Uncomment the test that you want to execute, and re-compile.
 		//// (Run one test at a time).
-		test1(fileName);
-		test2(fileName);
-		test3(fileName, 3);
-		//// play(fileName);
+		////test1(fileName);
+		////test2(fileName);
+		////test3(fileName, 3);
+		play(fileName);
 	}
 
 	// Reads the data file and prints the initial board.
@@ -27,8 +27,8 @@ public class GameOfLife {
 	// the count and cellValue functions.
 	public static void test2(String fileName) {
 		int[][] board = read(fileName);
-		count(board, 5, 5);
-		cellValue(board, 5, 5);
+		count(board, 2, 2);
+		cellValue(board, 2, 2);
 	}
 
 	// Reads the data file, plays the game for Ngen generations,
