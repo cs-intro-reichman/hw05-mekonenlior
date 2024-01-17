@@ -27,8 +27,8 @@ public class GameOfLife {
 	// the count and cellValue functions.
 	public static void test2(String fileName) {
 		int[][] board = read(fileName);
-		count(board, 0, 0);
-		cellValue(board, 0, 0);
+		count(board, 5, 5);
+		cellValue(board, 5, 5);
 	}
 
 	// Reads the data file, plays the game for Ngen generations,
@@ -144,7 +144,7 @@ public class GameOfLife {
 	public static void print(int[][] arr) {
 		int row = arr.length;
 		int col = arr[0].length;
-		for ( int i = 0; i < row - 1; i++) {
+		for (int i = 0; i < row - 1; i++) {
 			for (int j = 0; j < col - 1; j++) {
 				System.out.println(arr[i][j]);
 			}
