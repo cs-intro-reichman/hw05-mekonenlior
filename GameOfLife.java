@@ -66,21 +66,21 @@ public class GameOfLife {
 	// This function assumes that the input file contains valid data, and does no
 	// input testing.
 	public static int[][] read(String fileName) {
-		In in = new In(fileName); // Constructs an In object for reading the input file
+		In in = new In(fileName);
 		int rows = Integer.parseInt(in.readLine());
 		int cols = Integer.parseInt(in.readLine());
 		int[][] board = new int[rows + 2][cols + 2];
-		boolean finishedReadingFile = false;
-		String readNextLine;
+		boolean finishReadingFile = false;
+		String readNextline = "";
 		int startRow = 1;
-		while (!finishedReadingFile) {
-			readNextLine = in.readLine();
-			for (int i = 0; i < readNextLine.length(); i++) {
-				if (readNextLine.charAt(i) == 'x') {
+		while (!finishReadingFile) {
+			readNextline = in.readLine();
+			for (int i = 0; i < readNextline.length(); i++) {
+				if (readNextline.charAt(i) == 'x') {
 					board[startRow][i + 1] = 1;
 				}
 			}
-			finishedReadingFile = in.isEmpty();
+			finishReadingFile = in.isEmpty();
 			startRow++;
 		}
 		return board;
@@ -147,10 +147,10 @@ public class GameOfLife {
 
 	// Prints the board. Alive and dead cells are printed as 1 and 0, respectively.
 	public static void print(int[][] arr) {
-		int row = arr.length;
-		int col = arr[0].length;
-		for (int i = 0; i < row - 1; i++) {
-			for (int j = 0; j < col - 1; j++) {
+		int rows = arr.length;
+		int cols = arr[0].length;
+		for (int i = 1; i < rows - 1; i++) {
+			for (int j = 1; j < cols - 1; j++) {
 				System.out.printf("%3s", arr[i][j]);
 			}
 			System.out.println();
