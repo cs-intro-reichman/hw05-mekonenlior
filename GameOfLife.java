@@ -14,7 +14,7 @@ public class GameOfLife {
 		//// test1(fileName);
 		//// test2(fileName);
 		//// test3(fileName, 3);
-		//// play(fileName);
+		play(fileName);
 	}
 
 	// Reads the data file and prints the initial board.
@@ -77,6 +77,7 @@ public class GameOfLife {
 					board[i][j + 1] = (line.charAt(j) == 'x') ? 1 : 0;
 				}
 			}
+			line = in.readLine();
 		}
 		return board;
 	}
@@ -146,7 +147,7 @@ public class GameOfLife {
 		int col = arr[0].length;
 		for (int i = 0; i < row - 1; i++) {
 			for (int j = 0; j < col - 1; j++) {
-				System.out.print(arr[i][j] + " ");
+				System.out.printf("%3s", arr[i][j]);
 			}
 			System.out.println();
 		}
