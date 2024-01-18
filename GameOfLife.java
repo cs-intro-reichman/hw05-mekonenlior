@@ -70,18 +70,13 @@ public class GameOfLife {
 		int rows = Integer.parseInt(in.readLine());
 		int cols = Integer.parseInt(in.readLine());
 		int[][] board = new int[rows + 2][cols + 2];
-		boolean finishReadingFile = false;
-		String readNextline = "";
-		int startRow = 1;
-		while (!finishReadingFile) {
-			readNextline = in.readLine();
-			for (int i = 0; i < readNextline.length(); i++) {
-				if (readNextline.charAt(i) == 'x') {
+		for (int startRow = 1; in.hasNextLine(); startRow++) {
+			String line = in.readLine();
+			for (int i = 0; i < line.length(); i++) {
+				if (line.charAt(i) == 'x') {
 					board[startRow][i + 1] = 1;
 				}
 			}
-			finishReadingFile = in.isEmpty();
-			startRow++;
 		}
 		return board;
 	}
